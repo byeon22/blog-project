@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Main from './components/Main';
+import MyBlog from './components/MyBlog';
+import SideBar from './components/Sidebar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+// function App = () =>은 오류가 났다. 왜지?
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+          <Routes>
+              <Route path={"/"} element={<Main/>}></Route>
+              <Route path={"/Myblog"} element={<MyBlog/>}></Route>
+          </Routes>
     </div>
   );
 }
